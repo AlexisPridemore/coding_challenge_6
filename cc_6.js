@@ -79,5 +79,23 @@ let updatedOrders = applyBulkDiscount(orders, amount => amount > 500 ? amount * 
 
 console.log(updatedOrders);  //log updated orders
 
+// Task 7 Closures, Scenario: Business Expense Tracker
+
+function createExpenseTracker() {
+    let totalExpenses = 0;
+    return function(amount) {
+        totalExpenses += amount;
+        return `Total Expenses: $${totalExpenses}`;
+    };
+}
+let tracker = createExpenseTracker();
+
+console.log(tracker(200));   //Test Data
+console.log(tracker(150));   //Test Data
+
+
+
+
+
 
 
