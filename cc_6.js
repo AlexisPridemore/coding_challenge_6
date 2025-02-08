@@ -67,3 +67,17 @@ function convertCurrency(amount, exchangeRate) {
 
 convertCurrency(100, 1.1);   //Test Data
 convertCurrency(250, 0.85);  // Test Data
+
+// Task 6  Higher-Order Functions, Scenario: Discount Strategy for Bulk Orders
+
+let orders = [200, 600, 1200, 450, 800];  //Declare array orders
+
+let applyBulkDiscount = (orders, discountFunction) => {
+    return orders.map(discountFunction);
+};  //calculate 10% discount on orders above $500
+let updatedOrders = applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount);
+
+console.log(updatedOrders);  //log updated orders
+
+
+
